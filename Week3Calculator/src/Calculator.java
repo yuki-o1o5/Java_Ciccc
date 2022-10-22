@@ -8,6 +8,7 @@ public class Calculator {
         int number1 = 1;
         int number2 = 1;
         int output = 0;
+        String yesNo = "yes";
 
 
         Scanner sc = new Scanner(System.in);
@@ -17,7 +18,7 @@ public class Calculator {
 
         try {
 
-            while(true){
+            while(yesNo.equals("yes")){
 
 
                 System.out.println("==============================");
@@ -47,17 +48,27 @@ public class Calculator {
                 }
                 System.out.println("Your final output is : " + output);
 
-                while(true){
-                    System.out.println("Do you want to continue this question? (yes or no): ");
+                while(yesNo.equals("yes")){
+                    System.out.println("Do you want to use calculator again ?  (yes or no): ");
+                    yesNo = sc.next();
+
                     // yesは最初に戻る
+                    if(yesNo.equals("yes")){
+                        break;
+                    }
     
                     // Noは処理終わる
-    
+                    else if(yesNo.equals("no")){
+                        System.out.println("Thankyou for choosing the calculator, BYE BYE!");
+                        break;
+                    }
+
                     // 上記以外はもう一度聞く
+                    else{
+                        System.out.println("Prease enter yes or no.");
+                        yesNo = "yes";
+                    }
                 }
-
-
-
             }
 
 
