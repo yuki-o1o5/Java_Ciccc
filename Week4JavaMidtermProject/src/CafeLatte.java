@@ -1,4 +1,3 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CafeLatte {
@@ -12,7 +11,6 @@ public class CafeLatte {
     int hereToGo = 1;
     double output = 0;
     double tip = 0;
-
     String yesNo = "yes";
     Scanner sc = new Scanner(System.in);
 
@@ -29,6 +27,23 @@ public class CafeLatte {
       System.out.println("PLease enter your choice : ");
       menu = sc.nextInt();
 
+      switch(menu){
+        case 1:
+        output = output + 4.45;
+        break;
+      
+        case 2:
+        output = output + 4.95;
+        break;
+      
+        case 3:
+        output = output + 5.45;
+        break;
+      
+        default:
+        System.exit(0);
+      }
+
       printMessage("Type of Espresso");
       // System.out.println("======== Type of Espresso ========");
       System.out.println("1: Regular  /Free");
@@ -36,6 +51,20 @@ public class CafeLatte {
       System.out.println("==================================");
       System.out.println("Which shots would you like?");
       typeOfEspresso = sc.nextInt();
+
+      switch(typeOfEspresso){
+        case 1:
+        output = output + 0;
+        break;
+      
+        case 2:
+        output = output + 0;
+        break;
+      
+        default:
+        System.exit(0);
+      }
+
 
       printMessage("Number of Shot");
       // System.out.println("========= Number of Shot =========");
@@ -47,6 +76,27 @@ public class CafeLatte {
       System.out.println("How many shots would you like?");
       numberOfShot = sc.nextInt();
 
+      switch(numberOfShot){
+        case 1:
+        output = output + 0;
+        break;
+      
+        case 2:
+        output = output - 0.5;
+        break;
+
+        case 3:
+        output = output + 0.6;
+        break;
+
+        case 4:
+        output = output + 1.25;
+        break;
+      
+        default:
+        System.exit(0);
+      }
+
       printMessage("Milk Choice");
       // System.out.println("=========== Milk Choice ===========");
       System.out.println("1: Regular milk  /Free");
@@ -55,6 +105,23 @@ public class CafeLatte {
       System.out.println("===================================");
       System.out.println("Which milk would you like?");
       milkChoice = sc.nextInt();
+
+      switch(milkChoice){
+        case 1:
+        output = output + 0;
+        break;
+      
+        case 2:
+        output = output + 0.8;
+        break;
+      
+        case 3:
+        output = output + 0.8;
+        break;
+      
+        default:
+        System.exit(0);
+      }
 
       printMessage("Syrup Choice");
       // System.out.println("=========== Syrup Choice ===========");
@@ -67,6 +134,31 @@ public class CafeLatte {
       System.out.println("Would you like add syrup?");
       syrupChoice = sc.nextInt();
 
+      switch(syrupChoice){
+        case 1:
+        output = output + 0;
+        break;
+      
+        case 2:
+        output = output + 0.5;
+        break;
+
+        case 3:
+        output = output + 0.5;
+        break;
+
+        case 4:
+        output = output + 0.5;
+        break;
+
+        case 5:
+        output = output + 0.5;
+        break;
+      
+        default:
+        System.exit(0);
+      }
+
       printMessage("For here To go");
       // System.out.println("========= For here To go ==========");
       System.out.println("1: For Here           /Free");
@@ -74,82 +166,20 @@ public class CafeLatte {
       System.out.println("===================================");
       System.out.println("For here or to go?");
       hereToGo = sc.nextInt();
-
-      if(menu == 1){
-        output = output + 4.45;
-      }
-
-      if(menu == 2){
-        output = output + 4.95;
-      }
-
-      if(menu == 3){
-        output = output + 5.45;
-      }
-
-      if(typeOfEspresso == 1){
-        output = output + 0;
-      }
-
-      if(typeOfEspresso == 2){
-        output = output + 0;
-      }
-
-      if(numberOfShot == 1){
-        output = output + 0;
-      }
-
-      if(numberOfShot == 2){
-        output = output - 0.5;
-      }
-
-      if(numberOfShot == 3){
-        output = output + 0.6;
-      }
-
-      if(numberOfShot == 4){
-        output = output + 1.25;
-      }
-
-      if(milkChoice == 1){
-        output = output + 0;
-      }
       
-      if(milkChoice == 2){
-        output = output + 0.8;
-      }
-
-      if(milkChoice == 3){
-        output = output + 0.8;
-      }
-
-      if(syrupChoice == 1){
+      switch(hereToGo){
+        case 1:
         output = output + 0;
-      }
+        break;
 
-      if(syrupChoice == 2){
-        output = output + 0.5;
-      }
-
-      if(syrupChoice == 3){
-        output = output + 0.5;
-      }
-
-      if(syrupChoice == 4){
-        output = output + 0.5;
-      }
-
-      if(syrupChoice == 5){
-        output = output + 0.5;
-      }
-
-      if(hereToGo == 1){
-        output = output + 0;
-      }
-
-      if(hereToGo == 2){
+        case 2:
         output = output + 0.25;
+        break;
+
+        default:
+        System.exit(0);
       }
+
       
       System.out.println("Total cost is : " + output);
 
@@ -167,61 +197,42 @@ public class CafeLatte {
           System.out.println("2: 15%");
           System.out.println("3: 20%");
           System.out.println("4: None");
+          System.out.println("===================================");
           System.out.println("Do you want to pay tip?");
           tip = sc.nextInt();
 
           if(tip == 1){
             output = (output*1.12)*1.1;
-            printMessage("Total Price");
-            System.out.println("Total is" + output);
-            System.out.println("==================================");
-            printMessage("Thank you!");
-            break;
           }
 
           else if(tip == 2){
             output = (output*1.12)*1.15;
-            printMessage("Total Price");
-            System.out.println("Total is" + output);
-            System.out.println("==================================");
-            printMessage("Thank you!");
-            break;
           }
 
           else if(tip == 3){
             output = (output*1.12)*1.2;
-            printMessage("Total Price");
-            System.out.println("Total is" + output);
-            System.out.println("==================================");
-            printMessage("Thank you!");
-            break;
           }
 
           else{
             output = output*1.12;
-            printMessage("Total Price");
-            System.out.println("Total is" + output);
-            System.out.println("==================================");
-            printMessage("Thank you!");
-            break;
           }
-        }
 
+          printMessage("Total Price");
+          System.out.println("Total is " + (Math.ceil(output)));
+          System.out.println("Thank you very much!");
+          System.out.println("==================================");
+
+        }
         else{
           System.out.println("Prease enter yes or no.");
           yesNo = "yes";
+
         }
       }
     }
 
 
 
-  }catch (InputMismatchException e) {
-      System.out.println("Please enter a number which is valid meaning integer");
-  } catch (IllegalStateException e) {
-      System.out.println("Sorry, scanner is closed now");
-  } catch (ArithmeticException e) {
-      System.out.println("You cannot divide a number by 0");
   } catch (Exception e) {
       System.out.println("Something Went Wrong Sorry");
 
