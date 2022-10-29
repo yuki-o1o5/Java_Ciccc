@@ -251,13 +251,7 @@ public static void printMessage(String input) {
 
 
 
- 
-
-// 7 add more order or Not?
-// 8 Tip (10%, 15%, 20%)
-// 9 Tax
-
-      // Order cafe latte and Bill system
+// Order cafe latte and Bill system
 
 // 1 Cafe latte {hot small($4.45), hot medium(4.95), hot Large(5.45), ice small($4.45), ice medium(4.95), ice Large(5.45)}
 // 2 Choose espresso {regular(for free), decaf(for free)}
