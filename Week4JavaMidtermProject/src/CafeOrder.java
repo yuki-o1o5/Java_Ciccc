@@ -1,8 +1,17 @@
 import java.util.Scanner;
 
-public class CafeLatte {
-  
-  public static void main (String[] args){
+public class CafeOrder {
+  private String customerName;
+  double total;
+  String tips;
+
+
+  public CafeOrder(String customerName, int total, String tips) {
+    this.customerName = customerName;
+    this.total = total;
+    this.tips = tips;
+  }
+  public void orderCalculator() {
     int menu = 1;
     int typeOfEspresso = 1;
     int numberOfShot = 1;
@@ -203,26 +212,31 @@ public class CafeLatte {
 
           if(tip == 1){
             output = (output*1.12)*1.1;
+            this.tips = "yes";
           }
 
           else if(tip == 2){
             output = (output*1.12)*1.15;
+            this.tips = "yes";
           }
 
           else if(tip == 3){
             output = (output*1.12)*1.2;
+            this.tips = "yes";
           }
 
           else{
             output = output*1.12;
+            this.tips = "no";
           }
-
+          
           printMessage("Total Price");
           System.out.println("Total is " + (Math.ceil(output)));
-          System.out.println("Thank you very much!");
+          System.out.println(this.customerName + ", Thank you very much!");
           System.out.println("==================================");
-
+          this.total = Math.ceil(output);
         }
+
         else{
           System.out.println("Prease enter yes or no.");
           yesNo = "yes";
@@ -230,7 +244,6 @@ public class CafeLatte {
         }
       }
     }
-
 
 
   } catch (Exception e) {
@@ -247,18 +260,6 @@ public class CafeLatte {
 public static void printMessage(String input) {
   System.out.println("========= " + input + " =========");
 }
+
+
 }
-
-
-
-// Order cafe latte and Bill system
-
-// 1 Cafe latte {hot small($4.45), hot medium(4.95), hot Large(5.45), ice small($4.45), ice medium(4.95), ice Large(5.45)}
-// 2 Choose espresso {regular(for free), decaf(for free)}
-// 3 Choose shot {single shot(-0.5), extra single shot(0.6), extra double shot(1.25)}
-// 4 milk choice {regular milk(for free), skim milk(for free), lactose milk(for free), oat milk(0.8), almond milk(0.8)}
-// 5 Syrup flavors{caramel(0.5), vanilla(0.5), hazelnut(0.5), lavender(0.5)}
-// 6 for {here(for free), to go(0.25)}
-// 7 add more order
-// 8 Tip (10%, 15%, 20%)
-// 9 Tax
