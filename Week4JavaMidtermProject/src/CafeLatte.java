@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CafeLatte {
@@ -10,6 +11,7 @@ public class CafeLatte {
     int syrupChoice = 1;
     int hereToGo = 1;
     double output = 0;
+    double tip = 0;
 
     String yesNo = "yes";
     Scanner sc = new Scanner(System.in);
@@ -160,27 +162,84 @@ public class CafeLatte {
         }
 
         else if(yesNo.equals("no")){
-          System.out.println("Do you want to pay tax?");
-          break;
+          printMessage("Tip Choice");
+          System.out.println("1: 10%");
+          System.out.println("2: 15%");
+          System.out.println("3: 20%");
+          System.out.println("4: None");
+          System.out.println("Do you want to pay tip?");
+          tip = sc.nextInt();
+
+          if(tip == 1){
+            output = (output*1.12)*1.1;
+            printMessage("Total Price");
+            System.out.println("Total is" + output);
+            System.out.println("==================================");
+            printMessage("Thank you!");
+            break;
+          }
+
+          else if(tip == 2){
+            output = (output*1.12)*1.15;
+            printMessage("Total Price");
+            System.out.println("Total is" + output);
+            System.out.println("==================================");
+            printMessage("Thank you!");
+            break;
+          }
+
+          else if(tip == 3){
+            output = (output*1.12)*1.2;
+            printMessage("Total Price");
+            System.out.println("Total is" + output);
+            System.out.println("==================================");
+            printMessage("Thank you!");
+            break;
+          }
+
+          else{
+            output = output*1.12;
+            printMessage("Total Price");
+            System.out.println("Total is" + output);
+            System.out.println("==================================");
+            printMessage("Thank you!");
+            break;
+          }
         }
 
         else{
           System.out.println("Prease enter yes or no.");
           yesNo = "yes";
+        }
       }
-
-
-
     }
-  } finally{
 
+
+
+  }catch (InputMismatchException e) {
+      System.out.println("Please enter a number which is valid meaning integer");
+  } catch (IllegalStateException e) {
+      System.out.println("Sorry, scanner is closed now");
+  } catch (ArithmeticException e) {
+      System.out.println("You cannot divide a number by 0");
+  } catch (Exception e) {
+      System.out.println("Something Went Wrong Sorry");
+
+
+
+  } finally {
+
+      // Closing Scanner Class Instance
+      sc.close();
   }
 }
-
 public static void printMessage(String input) {
   System.out.println("========= " + input + " =========");
 }
 }
+
+
+
  
 
 // 7 add more order or Not?
