@@ -190,7 +190,7 @@ public class CafeOrder {
       }
 
       
-      System.out.println("Total cost is : " + output);
+      System.out.println("Total cost is : " + Math.ceil(output));
 
       while(yesNo.equals("yes")){
         System.out.println("Do you want to order another one?  (yes or no): ");
@@ -249,8 +249,7 @@ public class CafeOrder {
   } catch (Exception e) {
       System.out.println("Something Went Wrong Sorry");
 
-
-
+      
   } finally {
 
       // Closing Scanner Class Instance
@@ -258,7 +257,7 @@ public class CafeOrder {
   }
 }
 public static void printMessage(String input) {
-  System.out.println("========= " + input + " =========");
+  System.out.println("=========== " + input + " ===========");
 }
 
 
